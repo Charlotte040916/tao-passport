@@ -1,0 +1,1 @@
+-- Initial TAO Passport schema. Mirrors ../schema.sql for migration runners.
