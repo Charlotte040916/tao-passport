@@ -225,19 +225,6 @@ Read more in `docs/architecture.md`.
 
 ---
 
-## Roadmap
-
-| Phase | Focus |
-| --- | --- |
-| Phase 1 | Full-stack scaffold, demo passport UI, Express API, schema, docs, CI. |
-| Phase 2 | Live Bittensor chain queries, wallet history indexing, validator/miner metrics. |
-| Phase 3 | Versioned reputation models, signal provenance, abuse-resistant weighting. |
-| Phase 4 | Public wallet pages, embeddable cards, API keys, rate limits, production deployment. |
-
-Read the full roadmap in `docs/roadmap.md`.
-
----
-
 ## Security and Privacy Notes
 
 - TAO Passport should never require wallet custody or private keys.
@@ -257,7 +244,9 @@ Read the full roadmap in `docs/roadmap.md`.
 - `CONTRIBUTING.md`
 
 ---
+🙌 Contributing
+TAO passport will flourish via open-source collaboration. In this spirit, we embrace diverse contributions from the community. If you would like to be a part, review our Contribution Guidelines first.
 
-## License
+---
 
 MIT — see `LICENSE`.
