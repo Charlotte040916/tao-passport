@@ -1,81 +1,263 @@
 
 # TAO Passport
 
-TAO Passport is a universal reputation and achievement system for the Bittensor TAO ecosystem. It turns a plain wallet address into a readable profile that combines on-chain history, validator and miner activity, subnet participation, governance, GitTensor contributions, and community signals.
+<p align="center">
+  <img src="frontend/public/tao-passport.svg" alt="TAO Passport" width="120" />
+</p>
 
+<p align="center">
+  <strong>A portable identity and reputation layer for Bittensor wallets.</strong>
+</p>
 
-<img width="922" height="614" alt="tao-passport-ads_6_60" src="https://github.com/user-attachments/assets/e2548909-ab6a-4117-964e-0a56308049fa" />
+<p align="center">
+  <img width="922" height="614" alt="TAO Passport product preview" src="https://github.com/user-attachments/assets/e2548909-ab6a-4117-964e-0a56308049fa" />
+</p>
 
+<p align="center">
+  <a href="https://bittensor.com/"><img alt="Bittensor" src="https://img.shields.io/badge/ecosystem-Bittensor-blue" /></a>
+  <a href="https://github.com/RenzoMXD/tao-passport/issues"><img alt="Issues" src="https://img.shields.io/github/issues/RenzoMXD/tao-passport" /></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey" /></a>
+  <img alt="TypeScript" src="https://img.shields.io/badge/stack-TypeScript-3178c6" />
+</p>
 
-## Why It Exists
+TAO Passport turns a raw TAO wallet address into a readable public profile: validator and miner history, subnet participation, governance activity, GitTensor contributions, achievements, reputation signals, and a timeline of meaningful ecosystem activity.
 
-A wallet address alone does not explain whether the holder is an experienced validator, a long-term miner, a respected developer, or a governance participant. TAO Passport gives every wallet a portable reputation profile so users can discover trusted contributors and reduce unknown-counterparty risk.
+It is built for the Bittensor ecosystem, where wallet identity alone is not enough to understand trust, contribution quality, or long-term participation.
 
-## Core Features
+---
 
-- **Wallet Passport**: level, trust score, years active, and short wallet summary.
-- **Achievement System**: validator, miner, governance, GitTensor, subnet, and community badges.
-- **Reputation Model**: weighted transparent signals from chain data and ecosystem activity.
-- **Timeline**: historical events that show how a wallet earned reputation.
-- **Leaderboard**: discovery surface for high-signal TAO ecosystem contributors.
+## What This Is
 
-## Tech Stack
+TAO Passport is an initial full-stack scaffold for a Bittensor wallet reputation product.
 
-- **Frontend**: React, TypeScript, TailwindCSS, Vite
-- **Backend**: Node.js, Express, TypeScript
-- **Database**: PostgreSQL
-- **Blockchain Data**: Bittensor API adapters and chain query service layer
-- **Hosting Targets**: Vercel for frontend, Railway or Render for backend
+| Surface | Purpose |
+| --- | --- |
+| Wallet passport | A public profile for a TAO wallet with level, score, summary, and activity history. |
+| Reputation engine | Weighted signals from validator/miner activity, subnet participation, governance, GitTensor, and community behavior. |
+| Achievement system | Badges for durable ecosystem participation such as validating, mining, voting, building, and contributing. |
+| Timeline | Chronological wallet activity across chain, subnet, contribution, and community events. |
+| Leaderboard | Discovery surface for high-signal Bittensor ecosystem participants. |
+
+## What This Is Not
+
+- It is not a wallet custody app.
+- It is not a financial risk score.
+- It is not a guarantee that a wallet owner is trustworthy.
+- It is not yet connected to production Bittensor indexers.
+
+The current implementation is a realistic product scaffold with demo data, API boundaries, shared types, database schema, and UI flows ready for live integrations.
+
+---
+
+## Why TAO Passport
+
+Bittensor activity is spread across wallets, validators, miners, subnets, governance, GitHub/GitTensor contributions, and community channels. That makes it difficult to answer practical questions:
+
+- Has this wallet participated consistently over time?
+- Is this address connected to validator, miner, or builder activity?
+- Which subnets does this participant contribute to?
+- What signals explain the reputation score?
+- Which achievements or timeline events support the profile?
+
+TAO Passport gives each wallet a portable identity surface so users can inspect reputation instead of guessing from an address.
+
+---
+
+## Product Preview
+
+The frontend currently includes:
+
+- Landing page for the Bittensor reputation layer.
+- Sample passport profile.
+- Achievement grid.
+- Trust score breakdown.
+- Activity timeline.
+- Leaderboard and search surfaces.
+
+Core UI files live under `frontend/src/pages` and `frontend/src/components`.
+
+---
 
 ## Repository Structure
 
 ```text
 tao-passport/
-├── README.md
-├── CONTRIBUTING.md
-├── contributing.md
-├── docker-compose.yml
-├── docs/
-├── frontend/
-├── backend/
+├── backend/                 # Express API, services, blockchain adapters
+├── database/                # PostgreSQL schema, migration, seed data
+├── docs/                    # Architecture, roadmap, scoring, achievements
+├── frontend/                # React + Vite passport application
 ├── packages/
-├── scripts/
-├── database/
-└── .github/
+│   ├── shared-types/        # Passport, reputation, achievement contracts
+│   └── shared-utils/        # Shared formatting and scoring helpers
+├── scripts/                 # Data and maintenance scripts
+├── docker-compose.yml       # Local PostgreSQL service
+└── package.json             # npm workspace root
 ```
+
+---
 
 ## Quick Start
 
+Requirements:
+
+- Node.js 20+
+- npm 10+
+- Docker, if running PostgreSQL locally
+
 ```bash
+git clone https://github.com/RenzoMXD/tao-passport.git
+cd tao-passport
 cp .env.example .env
 npm install
-npm run build
 npm run dev
 ```
 
-Start PostgreSQL locally when database-backed development is needed:
+Default local services:
+
+| Service | URL |
+| --- | --- |
+| Frontend | `http://localhost:5173` |
+| Backend API | `http://localhost:4000` |
+| Health check | `http://localhost:4000/health` |
+
+Start PostgreSQL when database-backed development is needed:
 
 ```bash
 docker compose up -d postgres
 ```
 
-Frontend: `http://localhost:5173`
-Backend: `http://localhost:4000`
-Health check: `http://localhost:4000/health`
+---
 
-## API Endpoints
+## Environment Variables
 
-- `GET /health`
-- `GET /api/passport/sample`
-- `GET /api/passport/:walletAddress`
-- `GET /api/achievements`
-- `GET /api/reputation/signals`
-- `GET /api/reputation/leaderboard`
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `DATABASE_URL` | PostgreSQL connection string | `postgres://tao_passport:tao_passport@localhost:5432/tao_passport` |
+| `PORT` | Backend API port | `4000` |
+| `CORS_ORIGIN` | Allowed frontend origin | `http://localhost:5173` |
+| `VITE_API_URL` | Frontend API base URL | `http://localhost:4000` |
+| `BITTENSOR_NETWORK` | Target Bittensor network | `finney` |
 
-## Development Status
+Copy `.env.example` before running locally:
 
-This is an initial GitTensor submission scaffold. The current implementation includes a working full-stack shell, demo passport data, database schema, service boundaries, and documentation. Production work should replace demo chain data with live Bittensor queries and persistent repository implementations.
+```bash
+cp .env.example .env
+```
+
+---
+
+## Development Commands
+
+```bash
+# Run frontend and backend together
+npm run dev
+
+# Build all workspaces
+npm run build
+
+# Run lint checks
+npm run lint
+
+# Run type checks
+npm run typecheck
+
+# Run tests where configured
+npm run test
+```
+
+Workspace-specific commands:
+
+```bash
+npm run dev --workspace frontend
+npm run dev --workspace backend
+npm run build --workspace frontend
+npm run build --workspace backend
+```
+
+---
+
+## API Surface
+
+| Method | Route | Purpose |
+| --- | --- | --- |
+| `GET` | `/health` | API health check. |
+| `GET` | `/api/passport/sample` | Returns the demo passport profile. |
+| `GET` | `/api/passport/:walletAddress` | Looks up a wallet passport by Substrate-style address. |
+| `GET` | `/api/achievements` | Lists available achievement definitions. |
+| `GET` | `/api/reputation/signals` | Returns reputation signal metadata. |
+| `GET` | `/api/reputation/leaderboard` | Returns ranked reputation profiles. |
+
+Example:
+
+```bash
+curl http://localhost:4000/api/passport/sample
+```
+
+---
+
+## Reputation Model
+
+TAO Passport is designed around explainable reputation. A score should be traceable to specific signals instead of appearing as a black box.
+
+| Signal Group | Example Inputs | Why It Matters |
+| --- | --- | --- |
+| Validator reliability | uptime, consistency, subnet performance | Shows operational trust and long-term network contribution. |
+| Miner participation | mining history, subnet role, recent activity | Captures durable work across Bittensor subnets. |
+| Governance activity | proposal voting, participation frequency | Identifies protocol-level engagement. |
+| GitTensor contribution | merged PRs, reviews, issue work, recency | Rewards builder activity and open-source contribution. |
+| Community signal | durable non-code contribution, ecosystem support | Adds context outside pure chain metrics. |
+
+See `docs/reputation-system.md` for the starter scoring principles.
+
+---
+
+## Architecture
+
+The project uses a TypeScript monorepo with isolated boundaries:
+
+1. The user opens or searches a Bittensor wallet address.
+2. The backend resolves passport data through repository and service layers.
+3. Blockchain adapters provide a replaceable boundary for live Bittensor queries.
+4. Reputation and achievement services transform raw signals into profile data.
+5. The frontend renders the passport card, achievements, trust breakdown, timeline, and leaderboard.
+
+Read more in `docs/architecture.md`.
+
+---
+
+## Roadmap
+
+| Phase | Focus |
+| --- | --- |
+| Phase 1 | Full-stack scaffold, demo passport UI, Express API, schema, docs, CI. |
+| Phase 2 | Live Bittensor chain queries, wallet history indexing, validator/miner metrics. |
+| Phase 3 | Versioned reputation models, signal provenance, abuse-resistant weighting. |
+| Phase 4 | Public wallet pages, embeddable cards, API keys, rate limits, production deployment. |
+
+Read the full roadmap in `docs/roadmap.md`.
+
+---
+
+## Security and Privacy Notes
+
+- TAO Passport should never require wallet custody or private keys.
+- Public profiles should explain signal sources and freshness.
+- GitHub or GitTensor integrations should avoid exposing private contribution context.
+- Reputation scores should be transparent, versioned, and auditable.
+- Public endpoints should use validation, rate limits, and cache controls before production use.
+
+---
+
+## Useful Docs
+
+- `docs/architecture.md`
+- `docs/reputation-system.md`
+- `docs/achievements.md`
+- `docs/roadmap.md`
+- `CONTRIBUTING.md`
+
+---
 
 ## License
 
-MIT
+MIT — see `LICENSE`.
