@@ -237,11 +237,11 @@ Read more in `docs/architecture.md`.
 
 ## Useful Docs
 
-- `docs/architecture.md`
-- `docs/reputation-system.md`
-- `docs/achievements.md`
-- `docs/roadmap.md`
-- `CONTRIBUTING.md`
+- [Architecture](docs/architecture.md)
+- [Reputation System](docs/reputation-system.md)
+- [Achievements](docs/achievements.md)
+- [Roadmap](docs/roadmap.md)
+- [Contributing](CONTRIBUTING.md)
 
 ---
 🙌 Contributing
