@@ -5,6 +5,8 @@ TAO Passport is a universal reputation and achievement system for the Bittensor 
 
 
 <img width="922" height="614" alt="tao-passport-ads_6_60" src="https://github.com/user-attachments/assets/e2548909-ab6a-4117-964e-0a56308049fa" />
+
+
 ## Why It Exists
 
 A wallet address alone does not explain whether the holder is an experienced validator, a long-term miner, a respected developer, or a governance participant. TAO Passport gives every wallet a portable reputation profile so users can discover trusted contributors and reduce unknown-counterparty risk.
