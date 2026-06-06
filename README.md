@@ -1,7 +1,8 @@
+
 # TAO Passport
 
 TAO Passport is a universal reputation and achievement system for the Bittensor TAO ecosystem. It turns a plain wallet address into a readable profile that combines on-chain history, validator and miner activity, subnet participation, governance, GitTensor contributions, and community signals.
-
+<img width="922" height="614" alt="tao-passport-ads_6_60" src="https://github.com/user-attachments/assets/e2548909-ab6a-4117-964e-0a56308049fa" /><img width="922" height="614" alt="tao-passport-ads_6_60" src="https://github.com/user-attachments/assets/a7b9d611-e49b-491a-ba50-75ec0d1b3864" />
 ## Why It Exists
 
 A wallet address alone does not explain whether the holder is an experienced validator, a long-term miner, a respected developer, or a governance participant. TAO Passport gives every wallet a portable reputation profile so users can discover trusted contributors and reduce unknown-counterparty risk.
