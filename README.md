@@ -244,8 +244,10 @@ Read more in `docs/architecture.md`.
 - [Contributing](CONTRIBUTING.md)
 
 ---
-🙌 Contributing
+## 🙌 Contributing
 TAO passport will flourish via open-source collaboration. In this spirit, we embrace diverse contributions from the community. If you would like to be a part, review our Contribution Guidelines first.
+
+[Contributing](CONTRIBUTING.md)
 
 ---
 
