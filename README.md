@@ -20,7 +20,7 @@
   <img alt="TypeScript" src="https://img.shields.io/badge/stack-TypeScript-3178c6" />
 </p>
 
-TAO Passport turns a raw TAO wallet address into a readable public profile: validator and miner history, subnet participation, governance activity, GitTensor contributions, achievements, reputation signals, and a timeline of meaningful ecosystem activity.
+TAO Passport turns a raw TAO wallet address into a readable public profile: validator and miner history, subnet participation, governance activity, contributions, achievements, reputation signals, and a timeline of meaningful ecosystem activity.
 
 It is built for the Bittensor ecosystem, where wallet identity alone is not enough to understand trust, contribution quality, or long-term participation.
 
@@ -240,7 +240,6 @@ Read more in `docs/architecture.md`.
 - [Architecture](docs/architecture.md)
 - [Reputation System](docs/reputation-system.md)
 - [Achievements](docs/achievements.md)
-- [Roadmap](docs/roadmap.md)
 - [Contributing](CONTRIBUTING.md)
 
 ---
