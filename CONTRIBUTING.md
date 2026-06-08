@@ -164,7 +164,6 @@ Useful docs:
 - `docs/architecture.md`
 - `docs/reputation-system.md`
 - `docs/achievements.md`
-- `docs/roadmap.md`
 
 ---
 
