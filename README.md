@@ -84,7 +84,7 @@ Core UI files live under `frontend/src/pages` and `frontend/src/components`.
 tao-passport/
 ├── backend/                 # Express API, services, blockchain adapters
 ├── database/                # PostgreSQL schema, migration, seed data
-├── docs/                    # Architecture, roadmap, scoring, achievements
+├── docs/                    # Architecture,scoring, achievements
 ├── frontend/                # React + Vite passport application
 ├── packages/
 │   ├── shared-types/        # Passport, reputation, achievement contracts
